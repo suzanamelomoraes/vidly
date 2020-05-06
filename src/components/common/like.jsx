@@ -8,7 +8,7 @@ class Like extends Component {
         if(!liked) classes += "-o"
         return (
             <>
-            <i onClick={onClick} className={classes} aria-hidden="true"></i>
+            <i onClick={onClick} style={{ cursor: "pointer" }} className={classes} aria-hidden="true"></i>
             </>
         )
 
