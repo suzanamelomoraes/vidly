@@ -7,7 +7,7 @@ class Like extends Component {
         if(!this.props.liked) classes += "-o"
         return (
             <>
-            <i className={classes} aria-hidden="true"></i>
+            <i onClick={this.props.onClick} className={classes} aria-hidden="true"></i>
             </>
         )
 
