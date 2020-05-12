@@ -6,7 +6,8 @@ import { getMovies } from "../services/fakeMovieService";
 class Movies extends Component {
   state = {
     movies: getMovies(),
-    pageSize: 4
+    currentPage: 1,
+    pageSize: 4,
   };
 
   handleDelete = (movie) => {
@@ -23,7 +24,7 @@ class Movies extends Component {
   };
 
   handlePageChange = (page) => {
-      console.log(page);
+    console.log(page);
   };
 
   render() {
@@ -69,7 +70,12 @@ class Movies extends Component {
             ))}
           </tbody>
         </table>
-        <Pagination itemsCount={count} pageSize={this.state.pageSize} onPageChange={this.handlePageChange}/>
+        <Pagination
+          itemsCount={count}
+          pageSize={this.state.pageSize}
+          correntPage={this.state.currentPage}
+          onPageChange={this.handlePageChange}
+        />
       </>
     );
   }
