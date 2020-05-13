@@ -3,14 +3,20 @@ import Like from "./common/like";
 import ListGroup from "./common/listGroup";
 import Pagination from "./common/pagination";
 import { getMovies } from "../services/fakeMovieService";
+import { getGenres } from "../services/fakeGenreService";
 import { paginate } from "../utils/paginate";
 
 class Movies extends Component {
   state = {
-    movies: getMovies(),
+    movies: [],
+    genres: [],
     currentPage: 1,
     pageSize: 4,
   };
+
+  componentDidMount(){
+      this.setState({ movies: getMovies(), genres: getGenres() });
+  }
 
   handleDelete = (movie) => {
     const movies = this.state.movies.filter((m) => m._id !== movie._id);
