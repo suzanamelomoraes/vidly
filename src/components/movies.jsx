@@ -14,16 +14,16 @@ class Movies extends Component {
     pageSize: 4,
   };
 
-  componentDidMount(){
-      this.setState({ movies: getMovies(), genres: getGenres() });
+  componentDidMount() {
+    this.setState({ movies: getMovies(), genres: getGenres() });
   }
 
-  handleDelete = movie => {
+  handleDelete = (movie) => {
     const movies = this.state.movies.filter((m) => m._id !== movie._id);
     this.setState({ movies });
   };
 
-  handleLike = movie => {
+  handleLike = (movie) => {
     const movies = [...this.state.movies];
     const index = movies.indexOf(movie);
     movies[index] = { ...movies[index] };
@@ -31,13 +31,13 @@ class Movies extends Component {
     this.setState({ movies });
   };
 
-  handlePageChange = page => {
+  handlePageChange = (page) => {
     this.setState({ currentPage: page });
   };
 
   handleGenreSelect = (genre) => {
-      console.log(genre);
-  }
+    console.log(genre);
+  };
 
   render() {
     const { length: count } = this.state.movies;
@@ -49,8 +49,13 @@ class Movies extends Component {
 
     return (
       <div className='row'>
-        <div className='col-2'>
-            <ListGroup items={this.state.genres} onItemSelect={this.handleGenreSelect} />
+        <div className='col-3'>
+          <ListGroup
+            items={this.state.genres}
+            textProperty="name"
+            valueProperty="_id"
+            onItemSelect={this.handleGenreSelect}
+          />
         </div>
         <div className='col'>
           <p>Showing {count} movies in the database</p>
