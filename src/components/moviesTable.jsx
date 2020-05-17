@@ -2,7 +2,7 @@ import React from "react";
 import Like from "./common/like";
 
 const MovieTable = (props) => {
-  const { movies } = props;
+  const { movies, onDelete, onLike } = props;
 
   return (
     <>
@@ -27,12 +27,12 @@ const MovieTable = (props) => {
               <td>
                 <Like
                   liked={movie.liked}
-                  onClick={() => this.handleLike(movie)}
+                  onClick={() => onLike(movie)}
                 />
               </td>
               <td>
                 <button
-                  onClick={() => this.handleDelete(movie)}
+                  onClick={() => onDelete(movie)}
                   className='btn btn-danger btn-sm'
                 >
                   Delete
