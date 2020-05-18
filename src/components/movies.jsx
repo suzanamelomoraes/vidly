@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MoviesTable from './moviesTable';
+import MoviesTable from "./moviesTable";
 import ListGroup from "./common/listGroup";
 import Pagination from "./common/pagination";
 import { getMovies } from "../services/fakeMovieService";
@@ -69,8 +69,12 @@ class Movies extends Component {
           />
         </div>
         <div className='col'>
-        <p>Showing {filtered.length} movies in the database</p>
-        < MoviesTable movies={this.state.movies} />
+          <p>Showing {filtered.length} movies in the database</p>
+          <MoviesTable
+            movies={movies}
+            onLike={this.handleLike}
+            onDelete={this.handleDelete}
+          />
           <Pagination
             itemsCount={filtered.length}
             pageSize={pageSize}
