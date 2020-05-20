@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 
-// columns: array
-// sortColumn: object
-// onSort: function
-
 class TableHeader extends Component {
   raiseSort = (path) => {
     const sortColumn = { ...this.props.sortColumn };
@@ -20,7 +16,12 @@ class TableHeader extends Component {
       <thead>
         <tr>
           {this.props.columns.map((column) => (
-            <th onClick={() => this.raiseSort(column.path)}>{column.label}</th>
+            <th
+              key={column.path || column.key}
+              onClick={() => this.raiseSort(column.path)}
+            >
+              {column.label}
+            </th>
           ))}
         </tr>
       </thead>
