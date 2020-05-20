@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
+import _ from 'lodash';
 
 export class tableBody extends Component {
     render() {
+        const {data, columns} = this.props
         return (
             <tbody>
-                <tr>
-                    <td></td>
-                </tr>
+                {data.map(item => <tr>
+                {columns.map(column => <td>{_.get(item, column.path)}</td>)}
+                </tr>)}
+                
             </tbody>
         )
     }
