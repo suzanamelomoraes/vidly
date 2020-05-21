@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import _ from "lodash";
 
-export class tableBody extends Component {
+class tableBody extends Component {
+    
   renderCell = (item, column) => {
     if (column.content) return column.content(item);
 
