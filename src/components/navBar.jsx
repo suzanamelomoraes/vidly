@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <div>
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-        <Link className='navbar-brand' to='#'>
+        <Link className='navbar-brand' to='/'>
           Vidly
         </Link>
         <button
@@ -22,22 +22,14 @@ const NavBar = () => {
 
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
           <div className='navbar-nav mr-auto'>
-            <NavLink className='nav-item nav-link active' to='#'>
-              Home <span className='sr-only'>(current)</span>
+            <NavLink className='nav-item nav-link' to='/movies'>
+              Movies <span className='sr-only'>(current)</span>
             </NavLink>
-            <NavLink className='nav-item nav-link' to='#'>
-              Link
+            <NavLink className='nav-item nav-link' to='/customers'>
+              Customers
             </NavLink>
-            <NavLink className='nav-item nav-link' to='#'>
-              Link
-            </NavLink>
-            <NavLink
-              className='nav-item nav-link disabled'
-              to='#'
-              tabindex='-1'
-              aria-disabled='true'
-            >
-              Disabled
+            <NavLink className='nav-item nav-link' to='/rentals'>
+              Rentals
             </NavLink>
           </div>
         </div>
