@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
 export class LoginForm extends Component {
+  state = {
+    account: {
+      username: '',
+      password: '',
+    },
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
 
