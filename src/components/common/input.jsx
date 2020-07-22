@@ -1,15 +1,15 @@
 import React from 'react';
 
-function input(props) {
+const input = ({ name, label, value, onChange }) => {
   return (
     <div>
       <div className='form-group'>
-        <label htmlFor='username'>Username</label>
+        <label htmlFor={name}>{label}</label>
         <input
-          value={account.username}
-          onChange={this.handleChange}
-          id='username'
-          name='username'
+          value={value}
+          onChange={onChange}
+          id={name}
+          name={name}
           type='text'
           className='form-control'
           autoFocus
@@ -17,6 +17,6 @@ function input(props) {
       </div>
     </div>
   );
-}
+};
 
 export default input;
